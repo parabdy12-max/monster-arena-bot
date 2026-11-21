@@ -1,0 +1,26 @@
+name: Godot CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  import-and-smoke-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Godot
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: "4.7.2"
+          use-dotnet: false
+      - name: Import project
+        run: godot --headless --editor --path . --import
+      - name: Smoke test
+        run: godot --headless --path . --script res://tests/smoke_test.gd
