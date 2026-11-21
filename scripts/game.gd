@@ -1,6 +1,7 @@
 extends Node2D
 
 const PLAYER_SCRIPT = preload("res://scripts/player_controller.gd")
+const TOUCH_SCRIPT = preload("res://scripts/touch_controls.gd")
 var player: CharacterBody2D
 var npc_position := Vector2(820, 560)
 var hint: Label
@@ -14,6 +15,10 @@ func _ready() -> void:
 	_build_player()
 	_build_npc()
 	_build_hud()
+	var touch_layer := CanvasLayer.new()
+	touch_layer.name = "TouchControls"
+	touch_layer.set_script(TOUCH_SCRIPT)
+	add_child(touch_layer)
 
 func _draw() -> void:
 	draw_rect(Rect2(0, 0, 2800, 720), Color("#090e19"))
