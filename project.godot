@@ -1,0 +1,45 @@
+; Godot Engine project configuration
+config_version=5
+
+[application]
+config/name="تاج سیاه: فساد"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
+
+[input]
+move_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey, "physical_keycode": 65)]
+}
+move_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey, "physical_keycode": 68)]
+}
+jump={
+"deadzone": 0.5,
+"events": [Object(InputEventKey, "physical_keycode": 32)]
+}
+dash={
+"deadzone": 0.5,
+"events": [Object(InputEventKey, "physical_keycode": 4194325)]
+}
+interact={
+"deadzone": 0.5,
+"events": [Object(InputEventKey, "physical_keycode": 69)]
+}
+
+[physics]
+2d/default_gravity=1200.0
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.015, 0.02, 0.035, 1)
