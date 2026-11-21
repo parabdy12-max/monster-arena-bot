@@ -57,7 +57,7 @@ func _build_platform(rect: Rect2) -> void:
 func _build_player() -> void:
 	player = CharacterBody2D.new()
 	player.name = "Player"
-	player.position = Vector2(600, 560)
+	player.position = Vector2(600, 600)
 	player.set_script(PLAYER_SCRIPT)
 	var shape := CapsuleShape2D.new()
 	shape.radius = 14
